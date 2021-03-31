@@ -13,11 +13,11 @@ docker build -t docker.pkg.github.com/midnighttime-cha/docker-php5.6-oci8/php5.6
 
 ## Docker run
 ```bash
-docker run -p 8080:80 -d -v $(pwd)/example:/var/www/html \
+docker run -p 1580:80 -d -v $(pwd)/example:/var/www/html \
 --restart=always \
 --name php5.6-oci8 \
 docker.pkg.github.com/midnighttime-cha/docker-php5.6-oci8/php5.6-oci8
 ```
 
 ## Test
-* Open [http://127.0.0.1:8080](http://127.0.0.1:8080) in your browser
+* Open [http://127.0.0.1:1580](http://127.0.0.1:1580) in your browser
