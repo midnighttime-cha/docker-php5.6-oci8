@@ -3,9 +3,9 @@ FROM debian:jessie
 # Use archived Debian repositories
 RUN sed -i 's/deb.debian.org/archive.debian.org/g' /etc/apt/sources.list && \
     sed -i '/security.debian.org/d' /etc/apt/sources.list && \
-    echo "deb http://archive.debian.org/debian jessie main" > /etc/apt/sources.list && \
-    echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid && \
-    apt-get update
+    echo "Acquire::Check-Valid-Until \"false\";" > /etc/apt/apt.conf.d/99no-check-valid && \
+    apt-get update && \
+    apt-get -y install apache2 php5 libapache2-mod-php5 php5-dev php-pear php5-curl curl libaio1
 
 MAINTAINER Thomas Bisignani <contact@thomasbisignani.com>
 
